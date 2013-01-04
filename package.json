@@ -1,0 +1,16 @@
+{
+  "author": "me",
+  "name": "test",
+  "version": "0.1.0",
+  "dependencies": {
+  	"grunt" : "*",
+  	"grunt-mocha" : "*",
+  	"requirejs" : "*"
+  	},
+  "devDependencies": {
+  	"mocha" : "*",
+  	"chai" : "*",
+  	"sinon" : "*",
+  	"sinon-chai" : "*"
+  }
+}
