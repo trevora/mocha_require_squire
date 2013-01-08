@@ -1,0 +1,58 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Mocha Spec Runner</title>
+  <link rel="stylesheet" href="lib/mocha/mocha.css">
+  <script type="text/javascript" src="lib/mocha/mocha.js"></script>
+  <script type="text/javascript" src="lib/chai.js"></script>
+  <script type="text/javascript" src="lib/sinon-chai.js"></script>
+  <script type="text/javascript" src="lib/sinon.js"></script>
+  <script type="text/javascript" src="../app/js/vendor/require.js"></script>
+
+  <script type="text/javascript">
+    require.config(
+      {
+        baseUrl : '../app/js',
+        paths: {
+          'spec' : '../../test/spec',
+
+          'jquery' : 'vendor/jquery-1.8.3',
+          'underscore' : 'vendor/underscore',
+          'backbone' : 'vendor/backbone',
+          'marionette' : 'vendor/backbone.marionette',
+          'backbone.eventbinder' : 'vendor/backbone.eventbinder',
+          'backbone.wreqr' : 'vendor/backbone.wreqr',
+          'backbone.babysitter' : 'vendor/backbone.babysitter',
+          'json2': 'vendor/json2',
+
+          'Squire' : '../../test/lib/Squire'
+        },
+        shim: {
+          underscore: {
+            exports: '_'
+          },
+          backbone: {
+            deps: ['jquery', 'underscore'],
+            exports: 'Backbone'
+          },
+          json2: {
+            exports: 'JSON'
+          }
+        }
+      }
+    );
+
+    require(['require'], function(require) {
+      mocha.setup('bdd');
+      expect = chai.expect;
+      require([/*'spec/test.smoketest',*/ 'spec/test.app'], function() {
+        mocha.run();
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="mocha"></div>
+</body>
+</html>

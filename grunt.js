@@ -12,10 +12,7 @@ module.exports = function(grunt) {
         ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
     },
     lint: {
-      files: ['grunt.js', 'lib/**/*.js', 'test/**/*.js']
-    },
-    qunit: {
-      files: ['test/**/*.html']
+      files: ['grunt.js', 'app/js/**/*.js', 'test/**/*.js']
     },
     concat: {
       dist: {
@@ -31,7 +28,7 @@ module.exports = function(grunt) {
     },
     watch: {
       files: '<config:lint.files>',
-      tasks: 'lint qunit'
+      tasks: 'lint mocha'
     },
     jshint: {
       options: {
@@ -51,10 +48,15 @@ module.exports = function(grunt) {
         jQuery: true
       }
     },
-    uglify: {}
+    uglify: {},
+    mocha: {
+      all: ['test/**/*.html']
+    }
   });
 
+  grunt.loadNpmTasks('grunt-mocha');
+
   // Default task.
-  grunt.registerTask('default', 'lint qunit concat min');
+  grunt.registerTask('default', 'lint mocha concat min');
 
 };
