@@ -46,7 +46,7 @@
     require(['require'], function(require) {
       mocha.setup('bdd');
       expect = chai.expect;
-      require([/*'spec/test.smoketest',*/ 'spec/test.app'], function() {
+      require(['spec/test.smoketest', 'spec/test.app'], function() {
         mocha.run();
       });
     });
