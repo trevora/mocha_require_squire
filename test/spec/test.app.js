@@ -1,4 +1,4 @@
-define(['app'], function(app) {
+define(['app/app'], function(app) {
 	describe('App', function() {
 		it('Should define a \'header\' region', function() {
 			expect(app.headerRegion).to.exist;
@@ -23,7 +23,7 @@ define(['Squire'], function(Squire) {
 
 		beforeEach(function(done) {
 			testContext.injector = new Squire();
-			testContext.injector.require(['app'], function(app) {
+			testContext.injector.require(['app/app'], function(app) {
 				testContext.app = app;
 				done();
 			});

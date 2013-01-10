@@ -2,24 +2,17 @@
 var require = {
     // Base URL relative to the test runner
     // Paths are relative to this
-    baseUrl: '../app/js/',
+    baseUrl: '../app/scripts/vendor',
     paths: {
-        'spec' : '../../test/spec',
-
-        'jquery' : 'vendor/jquery-1.8.3',
-        'underscore' : 'vendor/underscore',
-        'backbone' : 'vendor/backbone',
-        'marionette' : 'vendor/backbone.marionette',
-        'backbone.eventbinder' : 'vendor/backbone.eventbinder',
-        'backbone.wreqr' : 'vendor/backbone.wreqr',
-        'backbone.babysitter' : 'vendor/backbone.babysitter',
-        'json2': 'vendor/json2',
+        'app' : '../app',
+        'test' : '../../../test',
+        'spec' : '../../../test/spec',
 
         // Testing libs
-        'chai'          : '../../test/lib/chai',
-        'sinon-chai'    : '../../test/lib/sinon-chai',
-        'common'        : '../../test/common',
-        'Squire'        : '../../test/lib/Squire'
+        'chai'          : '../../../test/lib/chai',
+        'sinon-chai'    : '../../../test/lib/sinon-chai',
+        'common'        : '../../../test/common',
+        'Squire'        : '../../../test/lib/Squire'
     },
     shim: {
           underscore: {
