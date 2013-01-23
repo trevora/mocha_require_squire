@@ -9,9 +9,6 @@ var require = {
         'spec' : '../../../test/spec',
 
         // Testing libs
-        // 'chai'          : '../../../test/lib/chai',
-        // 'sinon-chai'    : '../../../test/lib/sinon-chai',
-        // 'common'        : '../../../test/common',
         'Squire'        : '../../../test/lib/Squire'
     },
     shim: {
@@ -29,8 +26,8 @@ var expect = chai.expect;
  
 // You can do this in the grunt config for each mocha task, see the `options` config
 mocha.setup({
-    ui: 'bdd' //,
-    //globals:["$", "jQuery", "chai", "expect", "sinonChai"]
+    ui: 'bdd',
+    globals:["$", "jQuery", "_", "Backbone", "Marionette"]
 });
 
 // Protect from barfs
